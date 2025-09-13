@@ -169,7 +169,83 @@ A directive, called a "shebang", in its first line to declare itself to the oper
 
 All of this will become more clear to you soon when we get to the topic of shell scripting.
 
+### Viewing File Content
 
+```cat``` - (catenate)  Print the entire file content.
+
+```more``` - Print file content page-by-page.
+
+```head``` - Print first 10 lines of the file. If use -n can specify the quantity of lines that you want to show.
+
+```tail``` - Print last 10 lines of the file. If use -n can specify the quantity of lines that you want to show.
+
+```wc``` - Count the number of characters, words and lines.
+
+### Useful Commands for Wrangling Text Files.”
+
+```sort``` - This command sort line in the file.
+
+```uniq``` - Filter out the repeat lines.
+
+```grep``` - (global regular expression print) Return lines tha match some patter, like ```grep leo file.txt``` will find in the file sentences that match the search "leo".
+
+```cut``` - Extract a section from each line
+
+```paste``` - Merge lines of differente files.
+
+### A Brief Introduction to Networking
+
+Packets and Pings
+A network packet is a formatted chunk of data that can be transmitted over a network.
+
+Today's computer networks typically use communication protocols that are based on such packets of information. Every packet consists of two types of data: 1. the control information, and 2. the payload. The control information is data about how and where to deliver the payload, such as the source and destination network addresses, while the payload is the message being sent.
+
+The ping command works by sending special 'echo request' packets to a host and waiting for a response from the host.
+
+ping is a utility available on most operating systems that have networking capability. Linux has its own implementation of the ping command that's used to test and troubleshoot connectivity to other network hosts.
+
+URLs and IP Adresses
+IP stands for "Internet Protocol" which defines the format of data transmitted over the internet or a local network.
+
+An IP address is a code used to uniquely identify any host on a network.
+
+An IP address can be used to establish a connection to a host and exchange packets with it, for example using the ping command. In addition to their payload, IP packets - a type of network packet that conforms to the Internet Protocol - contain the IP addresses of the source and destination hosts.
+
+A URL, more commonly known as a web address, stands for Uniform Resource Locator.
+
+A URL uniquely identifies a web resource and enables access to that resource. Typically the resource that a URL points to is a web page, but it can also be used for tasks such as transferring files, sending emails, and accessing databases.
+
+For example, the URL to the Wikipedia page for URL is https://en.wikipedia.org/wiki/URL. Just like for a typical URL, its format indicates a protocol (https), a hostname (en.wikipedia.org), and a file name (/wiki/URL).
+
+### Network Commands
+
+```hostname``` - This command shows the host name. If use -i we can get the IP. ```hostname -i```
+
+```ip -a``` - This command display system network interface. 
+
+```ping <site>``` - Ping sends packets, known as ICMP, Internet Control Message Protocol requests, To the server, listens for a response, And prints a result. Used to test server connection. 
+
+```curl``` - The curl command is a powerful tool That enables you to transfer data to and from URLs And supports many different protocols.
+
+```wget``` - Wget is like curl in that it can retrieve a file Located at a URL or the HTML code for a web page. But it's more specialized in its protocol support And has recursive downloading capabilities. This is useful when a URL might point to a folder That contains several files.
+
+### Archiving and Compressing
+
+```tar``` - (tape archive) Archive and extract files. 
+
+![alt text](image.png)
+
+```tar -cf notes.tar notes``` . If you would also like your archive to be compressed, you can enter the same command, except now you can use ```tar -czf notes.tar .gz notes``` that will use compression program called gzip. Adding the suffix dot gz to the output name ensures that Windows-based programs, for example, will correctly recognize the file type.
+
+```tar -tf notes.tar``` - will list the files archive
+
+```tar -xf notes.tar notes``` - That command will unpack or dearchive the archive files.
+
+```tar -xf notes.tar .gz notes``` - Decompressing and extract files.
+
+```zip``` - Compress files and directores to an archive. ```zip -r notes.zip notes```
+
+```unzip``` = Extract and decompress zip archive. ```unzip notes.zip```
 
 ## Module 3. Introduction to Shell Scripting
 
